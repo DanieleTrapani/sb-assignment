@@ -1,4 +1,4 @@
-import SBLogo from "../assets/logo.svg";
+import SBLogo from "../assets/logo.png";
 
 const Header = () => {
   return (
