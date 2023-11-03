@@ -38,6 +38,10 @@ const App = () => {
     // check the current length of filtered, set as n
     // add 4 from blogs with index starting at n (length of filtered) and ending at n + 3
     const n = filtered.length;
+    // base case if all blogs have been added to preview
+    if (n >= blogs.length) {
+      return;
+    }
     const addition = blogs.slice(n, n + 4);
     setFiltered(filtered.concat(addition));
   };
@@ -50,7 +54,7 @@ const App = () => {
 
   return (
     <Router>
-      <div className="flex flex-col justify-between h-screen">
+      <div className="flex flex-col gap-8 justify-between h-screen">
         <Header />
         <Routes>
           <Route
