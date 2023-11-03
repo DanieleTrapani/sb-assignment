@@ -15,7 +15,7 @@ const Header = () => {
           </Link>
         </div>
       </div>
-      <p className="text-white text-5xl text-center my-4">Blog</p>
+      <p className="text-white text-5xl text-center my-4">Blogs</p>
     </header>
   );
 };

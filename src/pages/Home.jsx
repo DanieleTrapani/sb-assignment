@@ -1,7 +1,7 @@
 import BlogCard from "../components/BlogCard";
 import PropTypes from "prop-types";
 
-const Home = ({ categories }) => {
+const Home = ({ categories, filtered, addFour }) => {
   return (
     <div className="flex gap-4 justify-center px-24">
       <div id="form" className="bg-white p-8 h-full w-1/3">
@@ -26,9 +26,6 @@ const Home = ({ categories }) => {
               className="bg-gray-50"
               placeholder="Geen categorie"
             >
-              <option selected disabled>
-                Geen categorie
-              </option>
               {categories.map((category) => (
                 <option key={category.id} value={category.name}>
                   {category.name}
@@ -40,12 +37,14 @@ const Home = ({ categories }) => {
       </div>
       <div id="blog-preview" className="flex flex-col bg-white p-8">
         <div className="grid grid-cols-2 gap-8">
-          <BlogCard />
-          <BlogCard />
-          <BlogCard />
-          <BlogCard />
+          {filtered.map((blog) => (
+            <BlogCard key={blog.id} blog={blog} />
+          ))}
         </div>
-        <button className="bg-orange-500 text-white rounded-full px-8 py-3 w-[12rem] self-center mt-32 hover:bg-orange-400 duration-300">
+        <button
+          className="bg-orange-500 text-white rounded-full px-8 py-3 w-[12rem] self-center mt-32 hover:bg-orange-400 duration-300"
+          onClick={addFour}
+        >
           Laad meer
         </button>
       </div>
@@ -55,6 +54,8 @@ const Home = ({ categories }) => {
 
 Home.propTypes = {
   categories: PropTypes.array,
+  filtered: PropTypes.array,
+  addFour: PropTypes.func,
 };
 
 export default Home;

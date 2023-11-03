@@ -9,6 +9,7 @@ import Home from "./pages/Home";
 const App = () => {
   const [categories, setCategories] = useState([]);
   const [blogs, setBlogs] = useState([]);
+  const [filtered, setFiltered] = useState([]);
 
   const getCategories = async (headers) => {
     fetch("https://frontend-case-api.sbdev.nl/api/categories", {
@@ -26,9 +27,19 @@ const App = () => {
     }).then((response) => {
       response.json().then((data) => {
         setBlogs(data.data);
+        // Load the first 4 blog posts
+        setFiltered(data.data.slice(0, 4));
         console.log(data.data);
       });
     });
+  };
+
+  const addFour = () => {
+    // check the current length of filtered, set as n
+    // add 4 from blogs with index starting at n (length of filtered) and ending at n + 3
+    const n = filtered.length;
+    const addition = blogs.slice(n, n + 4);
+    setFiltered(filtered.concat(addition));
   };
 
   useEffect(() => {
@@ -42,7 +53,16 @@ const App = () => {
       <div className="flex flex-col justify-between h-screen">
         <Header />
         <Routes>
-          <Route path="/" element={<Home categories={categories} />} />
+          <Route
+            path="/"
+            element={
+              <Home
+                categories={categories}
+                filtered={filtered}
+                addFour={addFour}
+              />
+            }
+          />
         </Routes>
         <Footer />
       </div>
