@@ -1,4 +1,4 @@
-import BlogCard from "../components/BlogCard";
+import BlogPreview from "../components/BlogPreview";
 import PropTypes from "prop-types";
 
 const Home = ({ categories, filtered, addFour }) => {
@@ -35,19 +35,7 @@ const Home = ({ categories, filtered, addFour }) => {
           </label>
         </form>
       </div>
-      <div id="blog-preview" className="flex flex-col bg-white p-8">
-        <div className="grid grid-cols-2 gap-8">
-          {filtered.map((blog) => (
-            <BlogCard key={blog.id} blog={blog} />
-          ))}
-        </div>
-        <button
-          className="bg-orange-500 text-white rounded-full px-8 py-3 w-[12rem] self-center mt-32 hover:bg-orange-400 duration-300"
-          onClick={addFour}
-        >
-          Laad meer
-        </button>
-      </div>
+      <BlogPreview filtered={filtered} addFour={addFour} />
     </div>
   );
 };
