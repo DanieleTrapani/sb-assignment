@@ -92,7 +92,7 @@ const Form = ({ categories, filtered, setFiltered }) => {
           <textarea
             name="content"
             id="content"
-            rows={20}
+            rows={10}
             className="bg-gray-50 w-full"
             required
           />
