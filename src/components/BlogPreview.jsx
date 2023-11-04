@@ -8,7 +8,7 @@ const BlogPreview = ({ filtered, addFour }) => {
       id="blog-preview"
       className="flex flex-col justify-between bg-white p-8 h-full"
     >
-      <div className="grid grid-cols-2 gap-8 max-h-[50rem] overflow-scroll pb-5">
+      <div className="grid grid-cols-2 gap-8 max-h-[30rem] overflow-auto pb-5">
         {filtered.map((blog) => (
           <BlogCard key={blog.id} blog={blog} />
         ))}
