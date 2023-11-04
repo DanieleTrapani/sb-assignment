@@ -1,7 +1,7 @@
 import Button from "./Button";
 import PropTypes from "prop-types";
 
-const Form = ({ categories }) => {
+const Form = ({ categories, filtered, setFiltered }) => {
   const createPost = (event) => {
     event.preventDefault();
     const headers = {
@@ -18,6 +18,10 @@ const Form = ({ categories }) => {
       method: "POST",
       headers,
       body,
+    }).then((response) => {
+      response.json().then((data) => {
+        setFiltered([data, ...filtered]);
+      });
     });
   };
 
@@ -85,6 +89,8 @@ const Form = ({ categories }) => {
 
 Form.propTypes = {
   categories: PropTypes.array.isRequired,
+  filtered: PropTypes.array.isRequired,
+  setFiltered: PropTypes.func.isRequired,
 };
 
 export default Form;
