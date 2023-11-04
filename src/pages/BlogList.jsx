@@ -16,7 +16,7 @@ const BlogList = ({ blogs }) => {
   }
 
   return (
-    <div className="px-24">
+    <div className="px-[10rem]">
       <div className="grid grid-cols-4 grid-rows-2 auto-cols-max gap-5 mb-4">
         {currentItems.map((blog) => (
           <BlogCard key={blog.id} blog={blog} />
@@ -30,8 +30,8 @@ const BlogList = ({ blogs }) => {
         containerClassName={"pagination "}
         nextLinkClassName={"text-orange-400"}
         activeClassName={"pagination-active bg-gray-300 py-1 px-4 rounded-2xl"}
-        pageClassName="py-1 px-4"
-        className="flex gap-3 justify-center items-center"
+        pageClassName="py-1 px-3"
+        className="flex gap-1 justify-center items-center text-sm"
       />
     </div>
   );
