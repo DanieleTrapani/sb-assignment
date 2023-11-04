@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
+import BlogList from "./pages/BlogList";
 
 const App = () => {
   // categories is an array of objects with the category data
@@ -69,6 +70,7 @@ const App = () => {
               />
             }
           />
+          <Route path="/blogs" element={<BlogList />} />
         </Routes>
         <Footer />
       </div>

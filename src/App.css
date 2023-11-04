@@ -2,3 +2,7 @@ header {
   background-image: url("./assets/Mask.png");
   background-size: cover;
 }
+
+.selected {
+  @apply border-b-2 border-solid border-orange-500 outline-offset-8;
+}
