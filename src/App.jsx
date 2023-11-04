@@ -70,7 +70,7 @@ const App = () => {
               />
             }
           />
-          <Route path="/blogs" element={<BlogList />} />
+          <Route path="/blogs" element={<BlogList blogs={blogs} />} />
         </Routes>
         <Footer />
       </div>
