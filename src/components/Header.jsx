@@ -38,8 +38,8 @@ const Header = () => {
           </Link>
         </div>
       </div>
-      <p className="text-white text-5xl text-center my-4 path-title invisible">
-        Blogs
+      <p className="text-white text-5xl text-center my-4 path-title invisible font-bold">
+        Blog
       </p>
     </header>
   );
