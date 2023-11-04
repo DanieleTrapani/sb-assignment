@@ -93,7 +93,7 @@ const Form = ({ categories, filtered, setFiltered }) => {
             name="content"
             id="content"
             rows={10}
-            className="bg-gray-50 w-full"
+            className="bg-gray-50 w-full p-1"
             required
           />
         </label>
