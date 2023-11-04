@@ -35,10 +35,10 @@ const Form = ({ categories, filtered, setFiltered }) => {
 
   return (
     <div id="form" className="bg-white p-8 h-full w-1/3">
-      <form action="" className="flex flex-col gap-5" onSubmit={createPost}>
+      <form action="" className="flex flex-col gap-4" onSubmit={createPost}>
         <p className="text-2xl font-bold">Plaats een blog bericht</p>
         <label htmlFor="title" className="flex flex-col">
-          <p className="text-base">Berichtnaam</p>
+          <p className="text-sm text-gray-500">Berichtnaam</p>
           <input
             className="bg-gray-50 p-3"
             type="text"
@@ -50,7 +50,7 @@ const Form = ({ categories, filtered, setFiltered }) => {
         </label>
 
         <label htmlFor="category_id" className="flex flex-col">
-          <p className="text-base">Categorie</p>
+          <p className="text-sm text-gray-500">Categorie</p>
           <select
             name="category_id"
             id="category_id"
@@ -71,7 +71,7 @@ const Form = ({ categories, filtered, setFiltered }) => {
         </label>
 
         <label htmlFor="image">
-          <p className="text-base">Header afbeelding</p>
+          <p className="text-sm text-gray-500">Header afbeelding</p>
           <div className="bg-gray-50 flex items-center justify-evenly px-2 py-2 max-w-[10rem]">
             <AiOutlineCamera />
             <div className="bg-[#7D7D7D] text-gray-200 text-xs rounded-full px-3 py-1">
@@ -88,11 +88,11 @@ const Form = ({ categories, filtered, setFiltered }) => {
         </label>
 
         <label htmlFor="content">
-          <p className="text-base">Bericht</p>
+          <p className="text-sm text-gray-500">Bericht</p>
           <textarea
             name="content"
             id="content"
-            rows={10}
+            rows={7}
             className="bg-gray-50 w-full p-1"
             required
           />
