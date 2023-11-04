@@ -20,7 +20,7 @@ const Form = ({ categories, filtered, setFiltered }) => {
       body,
     }).then((response) => {
       response.json().then((data) => {
-        setFiltered([data, ...filtered]);
+        setFiltered([data, ...filtered.slice(0, filtered.length - 1)]);
       });
     });
   };
