@@ -1,8 +1,15 @@
 import Button from "./Button";
+import { useState } from "react";
 import PropTypes from "prop-types";
 import { AiOutlineCamera } from "react-icons/ai";
 
 const Form = ({ categories, filtered, setFiltered }) => {
+  const [selected, setSelected] = useState("");
+
+  const handleChange = (event) => {
+    setSelected(event.target.value);
+  };
+
   const createPost = (event) => {
     event.preventDefault();
     const headers = {
@@ -47,10 +54,14 @@ const Form = ({ categories, filtered, setFiltered }) => {
           <select
             name="category_id"
             id="category_id"
-            className="bg-gray-50 p-3"
-            placeholder="Geen categorie"
+            className="bg-gray-50 p-3 text-gray-400"
+            value={selected}
+            onChange={handleChange}
             required
           >
+            <option disabled={true} value="">
+              Geen categorie
+            </option>
             {categories.map((category) => (
               <option key={category.id} value={category.id}>
                 {category.name}
@@ -61,7 +72,6 @@ const Form = ({ categories, filtered, setFiltered }) => {
 
         <label htmlFor="image">
           <p className="text-base">Header afbeelding</p>
-          {/* TODO: add another button or div to style like in prototype */}
           <div className="bg-gray-50 flex items-center justify-evenly px-2 py-2 max-w-[10rem]">
             <AiOutlineCamera />
             <div className="bg-[#7D7D7D] text-gray-200 text-xs rounded-full px-3 py-1">
