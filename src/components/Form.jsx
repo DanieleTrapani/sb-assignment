@@ -21,7 +21,6 @@ const Form = ({ categories, filtered, setFiltered }) => {
     body.append("category_id", event.target[1].value);
     body.append("image", event.target[2].files[0]);
     body.append("content", event.target[3].value);
-    console.log(body);
     fetch("https://frontend-case-api.sbdev.nl/api/posts", {
       method: "POST",
       headers,

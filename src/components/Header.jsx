@@ -4,7 +4,6 @@ import { useLocation } from "react-router-dom";
 
 const Header = () => {
   const { pathname } = useLocation();
-  console.log(pathname);
 
   return (
     <header className="h-38 px-[10rem] py-8">

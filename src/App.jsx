@@ -29,7 +29,6 @@ const App = () => {
     }).then((response) => {
       response.json().then((data) => {
         setBlogs(data.data);
-        console.log(data.data);
         // Load the first 4 blog posts
         setFiltered(data.data.slice(0, 4));
       });
