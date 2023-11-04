@@ -27,7 +27,7 @@ const Home = ({ categories, filtered, addFour }) => {
       <div id="form" className="bg-white p-8 h-full w-1/3">
         <form action="" className="flex flex-col gap-5" onSubmit={createPost}>
           <p className="text-2xl font-bold">Plaats een blog bericht</p>
-          <label htmlFor="name" className="flex flex-col">
+          <label htmlFor="title" className="flex flex-col">
             <p className="text-base">Berichtnaam</p>
             <input
               className="bg-gray-50 p-3"

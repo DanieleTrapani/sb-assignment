@@ -17,7 +17,6 @@ const App = () => {
       headers,
     }).then((response) => {
       response.json().then((data) => {
-        console.log(data);
         setCategories(data);
       });
     });
@@ -31,7 +30,6 @@ const App = () => {
         setBlogs(data.data);
         // Load the first 4 blog posts
         setFiltered(data.data.slice(0, 4));
-        // console.log(data.data);
       });
     });
   };
