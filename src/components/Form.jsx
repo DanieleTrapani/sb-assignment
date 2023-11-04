@@ -1,5 +1,6 @@
 import Button from "./Button";
 import PropTypes from "prop-types";
+import { AiOutlineCamera } from "react-icons/ai";
 
 const Form = ({ categories, filtered, setFiltered }) => {
   const createPost = (event) => {
@@ -61,6 +62,12 @@ const Form = ({ categories, filtered, setFiltered }) => {
         <label htmlFor="image">
           <p className="text-base">Header afbeelding</p>
           {/* TODO: add another button or div to style like in prototype */}
+          <div className="bg-gray-50 flex items-center justify-evenly px-2 py-2 max-w-[10rem]">
+            <AiOutlineCamera />
+            <div className="bg-[#7D7D7D] text-gray-200 text-xs rounded-full px-3 py-1">
+              Kies bestand
+            </div>
+          </div>
           <input
             type="file"
             name="image"
