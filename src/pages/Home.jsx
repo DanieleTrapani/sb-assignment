@@ -5,22 +5,21 @@ import PropTypes from "prop-types";
 const Home = ({ categories, filtered, addFour }) => {
   const createPost = (event) => {
     event.preventDefault();
-    // const headers = {
-    //   token: "pj11daaQRz7zUIH56B9Z",
-    //   accept: "application/json",
-    // };
-    const body = {
-      title: event.target[0].value,
-      category_id: event.target[1].value,
-      image: event.target[2].files[0],
-      content: event.target[3].value,
+    const headers = {
+      token: "pj11daaQRz7zUIH56B9Z",
+      accept: "application/json",
     };
+    const body = new FormData();
+    body.append("title", event.target[0].value);
+    body.append("category_id", event.target[1].value);
+    body.append("image", event.target[2].files[0]);
+    body.append("content", event.target[3].value);
     console.log(body);
-    // fetch("https://frontend-case-api.sbdev.nl/api/posts", {
-    //   method: "POST",
-    //   headers,
-    //   body,
-    // });
+    fetch("https://frontend-case-api.sbdev.nl/api/posts", {
+      method: "POST",
+      headers,
+      body,
+    });
   };
 
   return (
@@ -65,7 +64,7 @@ const Home = ({ categories, filtered, addFour }) => {
               name="image"
               id="image"
               className="hidden"
-              //   required
+              required
             />
           </label>
 
