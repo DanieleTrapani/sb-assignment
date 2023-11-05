@@ -7,6 +7,7 @@ const BlogCard = ({ blog }) => {
         <img
           src={`https://frontend-case-api.sbdev.nl/storage/${blog.img_url}`}
           className="w-full h-full object-cover"
+          alt="blog-header-image"
         />
         <p className="absolute bottom-1 left-3 text-xs italic">
           {new Date(blog.created_at)
