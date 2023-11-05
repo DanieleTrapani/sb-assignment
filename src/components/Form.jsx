@@ -35,11 +35,13 @@ const Form = ({ categories, filtered, setFiltered }) => {
   return (
     <div id="form" className="bg-white p-8 h-full w-1/3">
       <form action="" className="flex flex-col gap-4" onSubmit={createPost}>
-        <p className="text-2xl font-bold">Plaats een blog bericht</p>
+        <p className="text-2xl font-bold text-[#2B2B2B]">
+          Plaats een blog bericht
+        </p>
         <label htmlFor="title" className="flex flex-col">
           <p className="text-sm text-gray-500">Berichtnaam</p>
           <input
-            className="bg-gray-50 p-3"
+            className="bg-gray-50 p-3 placeholder:italic placeholder:text-xs placeholder:text-[#C8C8C8]"
             type="text"
             id="title"
             name="title"
@@ -53,7 +55,7 @@ const Form = ({ categories, filtered, setFiltered }) => {
           <select
             name="category_id"
             id="category_id"
-            className="bg-gray-50 p-3 text-gray-400"
+            className="bg-gray-50 p-3 italic text-xs text-[#C8C8C8]"
             value={selected}
             onChange={handleChange}
             required
